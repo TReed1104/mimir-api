@@ -2,11 +2,11 @@
 echo ---------------------------------------
 echo Deployment Start - Production
 echo ---------------------------------------
-echo Building and Deploying Flask API
+echo Building and Deploying Mimir API
 echo ---------------------------------------
-docker-compose -p flask-api -f docker-compose.yml up -d --build --remove-orphans
+docker-compose -p mimir-api -f docker-compose.yml up -d --build --remove-orphans
 echo
 echo ---------------------------------------
 echo Conntainer Status:
 echo ---------------------------------------
-docker ps | grep 'flask-api'
+docker ps | grep 'mimir-api'
