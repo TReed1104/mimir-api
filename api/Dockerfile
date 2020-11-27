@@ -34,4 +34,4 @@ RUN chmod +x ./boot.sh
 EXPOSE 5000
 
 ## Run out boot script
-ENTRYPOINT ["./boot.sh"]
+ENTRYPOINT ["sh", "./boot.sh"]
