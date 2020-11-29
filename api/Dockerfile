@@ -11,7 +11,8 @@ RUN apt-get clean && \
 
 ## Install our dependencies
 RUN apt-get install python3-pip -y && \
-    apt-get install libmysqlclient-dev -y
+    apt-get install libmysqlclient-dev -y && \
+    apt-get install libssl-dev -y
 
 ## Change Working Directory
 WORKDIR /usr/src/app
