@@ -1,4 +1,4 @@
-# Mimir, Timetabling System
+# Mimir
 ## What is Mimir?
 Mimir is a Microservice REST API used to pull data from the University of Lincoln Timetabling systems and parse it into a usable format by parts of the Asgard system stack. Mimir is written in Python (Version 3), using the Flask web microframework and its RESTful extension.
 
