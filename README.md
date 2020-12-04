@@ -1,8 +1,8 @@
-# Flask REST API template
-## What Is This Template?
-This template is the base configuration of the RESTful Flask services we deploy as part of the Asgard System Stack.
+# Mimir, Timetabling System
+## What is Mimir?
+Mimir is a Microservice REST API used to pull data from the University of Lincoln Timetabling systems and parse it into a usable format by parts of the Asgard system stack. Mimir is written in Python (Version 3), using the Flask web microframework and its RESTful extension.
 
-The API itself is written in Python (V3), using the Flask web microframework and its RESTful extension. The service was designed as a scalable microservice, providing reusable functionality within the system stack.
+Mimir takes its name from Norse mythology, where Mimir was a wise and all knowing advisor to the gods.
 
 <br>
 
@@ -45,7 +45,7 @@ Webargs handles the parameter parsing from the endpoint URLs to usable data with
 Marshmellow is a dependency of Webargs, we had to freeze this at this version due to something on their end stopping working correctly.
 
 ### API - Nose2 - 0.9.1
-Nose2 is an extension of the Python Unittest module, we use this as part of our unit, feature and integration testing. The project is set to export the results of these tests as JUnit XML files.
+Nose2 is an extension of the Python Unit-test module, we use this as part of our unit, feature and integration testing. The project is set to export the results of these tests as JUnit XML files.
 
 <br>
 
@@ -57,3 +57,28 @@ Batch Install the Pip3 modules at their frozen version by the following commands
 ```pip3
 pip3 install -r api/requirements.txt
 ```
+
+<br>
+
+---
+
+## Testing
+Under Construction
+
+<br>
+
+---
+
+## Installation
+Under Construction
+
+<br>
+
+---
+
+## Usage Guide - API Interactions and Endpoints
+Under Construction
+
+<br>
+
+---
