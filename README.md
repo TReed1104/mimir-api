@@ -77,7 +77,23 @@ Under Construction
 ---
 
 ## Usage Guide - API Interactions and Endpoints
-Under Construction
+
+### Exposed Endpoints
+Valid Endpoints
+```
+<server_address>/mimir-api/timetables
+<server_address>/mimir-api/bookings
+<server_address>/mimir-api/timetable_handler
+<server_address>/mimir-api/booking_handler
+```
+
+Example Endpoints
+```
+10.5.11.173/mimir-api/timetables
+10.5.11.173/mimir-api/bookings
+10.5.11.173/mimir-api/timetable_handler
+10.5.11.173/mimir-api/booking_handler
+```
 
 <br>
 
