@@ -183,5 +183,133 @@ Example Response:
 }
 ```
 
+### Endpoint - Timetable Handler
+Usage:
+```
+<server_address>/mimir-api/timetable_handler
+
+Supported HTTP Methods
+* GET
+* POST
+* PUT
+* DELETE
+```
+
+params:
+
+GET
+```
+id - The integer id of the timetable to get
+```
+
+POST
+```
+name - The friendly name for the timetable
+```
+
+PUT
+```
+id - The integer id of the timetable to update
+new_name - The new name for the timetable
+```
+
+DELETE
+```
+id - The integer id of the timetable to delete
+```
+
+#### GET method
+The GET method for the timetable_handler endpoint returns a JSON object representing a serialised version of the timetable.
+
+Usage:
+```
+GET -> <server_address>/mimir-api/timetable_handler?id=1
+```
+
+Response Codes:
+```
+200 - Ok
+404 - Timetable not found
+422 - Invalid Parameters
+```
+
+Example Response:
+```JSON
+{
+    "meta":{},
+    "links":{
+        "self": "http://mimir-api/timetable_handler?id=1"
+    },
+    "data": {
+        "timetable": {
+            "bookings":[],
+            "id": 1,
+            "timetable": "timetable_example"
+        }
+    }
+}
+```
+
+#### POST method
+The POST method for the timetable_handler endpoint allows the creation of a new timetable.
+
+Usage:
+```
+POST -> <server_address>/mimir-api/timetable_handler
+```
+
+Response Codes:
+```
+201 - Created
+422 - Timetable of that name already exists
+422 - Invalid Parameters
+```
+
+Example Request Body:
+```JSON
+{
+    "name": "Example Timetable"
+}
+```
+
+#### PUT method
+The PUT method for the timetable_handler endpoint allows for changes to be made to a timetable's data.
+
+Usage:
+```
+PUT -> <server_address>/mimir-api/timetable_handler
+```
+
+Response Codes:
+```
+202 - Accepteds
+405 - Timetable does not exist
+422 - Timetable of that name already exists
+422 - Invalid Parameters
+```
+
+Example Request Body:
+```JSON
+{
+    "id": 1,
+    "name": "Renamed Example Timetable"
+}
+```
+
+#### DELETE method
+The DELETE method for the timetable_handler endpoint allows for the deletion of a specified timetable.
+
+Usage:
+```
+DELETE -> <server_address>/mimir-api/timetable_handler?id=1
+```
+
+Response Codes:
+```
+202 - Success
+404 - Timetable not found
+422 - Invalid Parameters
+```
+
 
 ---
