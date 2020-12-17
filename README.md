@@ -95,6 +95,46 @@ Example Endpoints
 10.5.11.173/mimir-api/booking_handler
 ```
 
-<br>
+### Endpoint - Timetables List
+Usage:
+```
+<server_address>/mimir-api/timetables
+
+Supported HTTP Methods
+* GET
+```
+
+params:
+```
+N/A
+```
+
+#### GET method
+The GET method for the Timetable list endpoint returns a JSON array listing the timetables registered with Mimir.
+
+Usage:
+```
+GET -> <server_address>/mimir-api/timetables
+```
+
+Example Response:
+```JSON
+{
+    "meta":{},
+    "links":{
+        "self": "http://mimir-api/timetables"
+    },
+    "data": {
+        "timetables":[
+            {
+                "bookings":[],
+                "id": 1,
+                "timetable": "timetable_example"
+            }
+        ]
+    }
+}
+```
+
 
 ---
