@@ -311,5 +311,147 @@ Response Codes:
 422 - Invalid Parameters
 ```
 
+### Endpoint - Booking Handler
+Usage:
+```
+<server_address>/mimir-api/booking_handler
 
----
+Supported HTTP Methods
+* GET
+* POST
+* PUT
+* DELETE
+```
+
+params:
+
+GET
+```
+id - The integer id of the booking to get
+```
+
+POST
+```
+timetable
+name - The name for the session
+start - The Date/Time the session starts at
+end - The Date/Time the session end at
+colour - The colour of the session on the timetable frontend
+```
+
+PUT
+```
+id - The integer id of the booking to update
+name - The new name for the session
+colour - The new colour of the session on the timetable frontend
+```
+
+DELETE
+```
+id - The integer id of the booking to delete
+```
+
+#### GET method
+The GET method for the booking_handler endpoint returns a JSON object representing a serialised version of the booking.
+
+Usage:
+```
+GET -> <server_address>/mimir-api/booking_handler?id=1
+```
+
+Response Codes:
+```
+200 - Ok
+404 - Booking not found
+422 - Invalid Parameters
+```
+
+Example Response:
+```JSON
+ {
+    "meta":{},
+    "links":{
+        "self": "http://mimir-api:5000/booking_handler?id=1"
+    },
+    "data":{
+        "booking":{
+            "booking": "Test Booking",
+            "cell_colour": "#a2b0b8",
+            "duration": 8.0,
+            "end_time": "Mon, 13 Jan 2020 17:00:00 GMT",
+            "id": 1,
+            "start_time": "Mon, 13 Jan 2020 09:00:00 GMT",
+            "timetable": "Example Timetable",
+            "timetable_id": 4
+        }
+    }
+}
+```
+
+#### POST method
+The POST method for the booking_handler endpoint allows the creation of a new booking.
+
+Usage:
+```
+POST -> <server_address>/mimir-api/booking_handler
+```
+
+Response Codes:
+```
+201 - Created
+422 - booking of that name already exists
+422 - Invalid Parameters
+422 - Start and end date must match
+422 - End time must be after start time
+422 - A booking already exists at that time
+```
+
+Example Request Body:
+```JSON
+{
+    "timetable": "Example Timetable",
+    "name": "Example Booking",
+    "start": "2019-09-17T09:00:00+00:00",
+    "end": "2019-09-17T10:00:00+00:00",
+    "colour": "#FFFFFF"
+}
+```
+
+#### PUT method
+The PUT method for the booking_handler endpoint allows for changes to be made to a booking's data.
+
+Usage:
+```
+PUT -> <server_address>/mimir-api/booking_handler
+```
+
+Response Codes:
+```
+202 - Accepted
+404 - Booking not found
+422 - Invalid Parameters
+```
+
+Example Request Body:
+```JSON
+{
+    "id": 1,
+    "name": "New Example Booking",
+    "colour": "#F1FFFF"
+}
+```
+
+#### DELETE method
+The DELETE method for the booking_handler endpoint allows for the deletion of a specified booking.
+
+Usage:
+```
+DELETE -> <server_address>/mimir-api/booking_handler?id=1
+```
+
+Response Codes:
+```
+202 - Success
+404 - booking not found
+422 - Invalid Parameters
+```
