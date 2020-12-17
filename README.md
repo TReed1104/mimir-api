@@ -155,7 +155,6 @@ The GET method for the Bookings list endpoint returns a JSON array listing the b
 
 Usage:
 ```
-GET -> <server_address>/mimir-api/bookings
 GET -> <server_address>/mimir-api/bookings?timetable=timetable_example
 ```
 
