@@ -136,5 +136,52 @@ Example Response:
 }
 ```
 
+### Endpoint - Bookings List
+Usage:
+```
+<server_address>/mimir-api/bookings
+
+Supported HTTP Methods
+* GET
+```
+
+params:
+```
+timetable - String name of the timetable to list the bookings from
+```
+
+#### GET method
+The GET method for the Bookings list endpoint returns a JSON array listing the bookings for a given timetable.
+
+Usage:
+```
+GET -> <server_address>/mimir-api/bookings
+GET -> <server_address>/mimir-api/bookings?timetable=timetable_example
+```
+
+Example Response:
+```JSON
+{
+    "meta":{},
+    "links":{
+        "self": "http://mimir-api/bookings"
+    },
+    "data": {
+        "bookings":[
+            {
+                "booking": "test_booking",
+                "cell_colour": "#a2b0b8",
+                "duration": 8.0,
+                "end_time": "Tue, 14 Jan 2020 17:00:00 GMT",
+                "id": 2,
+                "start_time": "Tue, 14 Jan 2020 09:00:00 GMT",
+                "timetable": "timetable_example",
+                "timetable_id": 1
+            }
+        ]
+    }
+}
+```
+
 
 ---
